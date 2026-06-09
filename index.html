@@ -179,6 +179,59 @@
             margin-right: auto;
         }
 
+        /* Services Section */
+        .services {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--light-color);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-color: var(--primary-color);
+            background: var(--white);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .service-card p {
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
         /* Destinations Grid */
         .destinations {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -490,6 +543,10 @@
                 padding: 4rem 1.5rem;
             }
 
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
             .destinations-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -533,8 +590,66 @@
             <h1>Your Gateway to Global Education</h1>
             <p>Empowering Ethiopian and Habesha students to achieve their dreams of studying abroad with fully funded scholarships and expert guidance</p>
             <div>
-                <a href="#destinations" class="btn btn-primary">Explore Destinations</a>
+                <a href="#services" class="btn btn-primary">Our Services</a>
                 <a href="#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive support for your educational journey abroad</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Scholarship Guidance</h3>
+                    <p>Expert assistance in finding and applying for fully funded Bachelor's, Master's, and PhD scholarships across Europe, Canada, and beyond. We help you identify the best opportunities matching your profile.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3>Visa Support</h3>
+                    <p>Comprehensive visa application support including study visas, work visas, and skilled worker programs for Canada and European countries. We guide you through every step of the process.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>University Applications</h3>
+                    <p>Step-by-step guidance through university applications, from selecting the right program to submitting compelling applications. We help you present your best self to admissions committees.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Language Preparation</h3>
+                    <p>IELTS preparation and language courses to meet university requirements and excel in your studies abroad. Access our Lekora Language Academy for professional instruction.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Free Consultations</h3>
+                    <p>Free guidance sessions with live Q&A to help you understand scholarship opportunities, work visas, and study abroad options. Get your questions answered by experts.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h3>Pre-Departure Support</h3>
+                    <p>Complete pre-departure briefing including accommodation assistance, cultural orientation, and travel support. We prepare you for a smooth transition to your new country.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -561,13 +676,13 @@
                     </div>
                 </div>
                 
-                <!-- Canada - BREATHTAKING IMAGE UPDATED -->
+                <!-- Canada - FIXED WITH BREATHTAKING IMAGE -->
                 <div class="destination-card">
                     <div class="destination-image-container">
-                        <img src="https://images.unsplash.com/photo-1531263539446-3200496dfe86?w=400&h=300&fit=crop" 
+                        <img src="https://images.unsplash.com/photo-1531263539446-3200496dfe86?w=400&h=300&fit=crop&q=80" 
                              alt="Canada - Banff National Park" 
                              class="destination-image"
-                             onerror="this.onerror=null; this.src='https://picsum.photos/seed/canada/400/300';">
+                             onerror="this.onerror=null; this.src='https://picsum.photos/seed/canada400/300';">
                         <span class="country-code">CA</span>
                     </div>
                     <div class="destination-info">
@@ -792,8 +907,8 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#destinations">Destinations</a></li>
-                    <li><a href="#telegram">Telegram Updates</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>

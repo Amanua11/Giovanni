@@ -340,65 +340,87 @@
             color: var(--text-color);
         }
 
-        /* Destinations Section */
-        .destinations {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        }
-
-        .destinations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .destination-card {
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-        }
-
-        .destination-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-
-        .destination-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            display: block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .destination-info {
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .destination-info h3 {
-            color: var(--dark-color);
-            margin-bottom: 0.5rem;
-            font-size: 1.4rem;
-        }
-
-        .destination-info p {
-            color: var(--text-color);
-            font-size: 0.95rem;
-        }
-
-        .country-code {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(255,255,255,0.9);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: var(--primary-color);
-        }
+        <!-- Destinations Section -->
+<section class="destinations" id="destinations">
+    <div class="container">
+        <h2 class="section-title">Study Destinations</h2>
+        <p class="section-subtitle">Explore world-class education opportunities across the globe</p>
+        
+        <div class="destinations-grid">
+            <div class="destination-card" style="position: relative;">
+                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545c1a?w=400&h=300&fit=crop&q=80" alt="Italy" class="destination-image" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #008CBA 0%, #005f8f 100%)'">
+                <span class="country-code">IT</span>
+                <div class="destination-info">
+                    <h3>Italy</h3>
+                    <p>Fully funded scholarships for Bachelor's, Master's, and PhD programs</p>
+                </div>
+            </div>
+            
+            <div class="destination-card" style="position: relative;">
+                <img src="https://images.unsplash.com/photo-1517931524326-bdd7af3a31a7?w=400&h=300&fit=crop&q=80" alt="Canada" class="destination-image" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #FF0000 0%, #cc0000 100%)'">
+                <span class="country-code">CA</span>
+                <div class="destination-info">
+                    <h3>Canada</h3>
+                    <p>Study permits, work visas, and skilled worker programs</p>
+                </div>
+            </div>
+            
+            <div class="destination-card" style="position: relative;">
+                <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop&q=80" alt="United Kingdom" class="destination-image" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #012169 0%, #001547 100%)'">
+                <span class="country-code">GB</span>
+                <div class="destination-info">
+                    <h3>United Kingdom</h3>
+                    <p>World-renowned universities and research opportunities</p>
+                </div>
+            </div>
+            
+            <div class="destination-card" style="position: relative;">
+                <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&h=300&fit=crop&q=80" alt="Germany" class="destination-image" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #000000 0%, #DD0000 100%)'">
+                <span class="country-code">DE</span>
+                <div class="destination-info">
+                    <h3>Germany</h3>
+                    <p>Tuition-free education and strong industry connections</p>
+                </div>
+            </div>
+            
+            <div class="destination-card" style="position: relative;">
+                <img src="https://images.unsplash.com/photo-1555993539-1730b5e3c4e1?w=400&h=300&fit=crop&q=80" alt="Finland" class="destination-image" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #003580 0%, #002560 100%)'">
+                <span class="country-code">FI</span>
+                <div class="destination-info">
+                    <h3>Finland</h3>
+                    <p>Innovative education system and scholarship programs</p>
+                </div>
+            </div>
+            
+            <div class="destination-card" style="position: relative;">
+                <img src="https://images.unsplash.com/photo-1555881400-74d7adaacd81?w=400&h=300&fit=crop&q=80" alt="Portugal" class="destination-image" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #006600 0%, #004d00 100%)'">
+                <span class="country-code">PT</span>
+                <div class="destination-info">
+                    <h3>Portugal</h3>
+                    <p>Affordable education with full scholarship opportunities</p>
+                </div>
+            </div>
+            
+            <div class="destination-card" style="position: relative;">
+                <img src="https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=400&h=300&fit=crop&q=80" alt="Romania" class="destination-image" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #FCD116 0%, #002B7F 100%)'">
+                <span class="country-code">RO</span>
+                <div class="destination-info">
+                    <h3>Romania</h3>
+                    <p>Erasmus+ programs and summer opportunities</p>
+                </div>
+            </div>
+            
+            <div class="destination-card" style="position: relative;">
+                <img src="https://images.unsplash.com/photo-1572452345691-0a2bed4a37d8?w=400&h=300&fit=crop&q=80" alt="Malta" class="destination-image" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #CF142B 0%, #9e0f21 100%)'">
+                <span class="country-code">MT</span>
+                <div class="destination-info">
+                    <h3>Malta</h3>
+                    <p>English-taught programs in the heart of Europe</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         /* Telegram Info Section */
         .telegram-info {

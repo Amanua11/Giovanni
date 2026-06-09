@@ -17,14 +17,17 @@
         }
 
         :root {
-            --primary-color: #1e3a8a;
-            --secondary-color: #3b82f6;
-            --accent-color: #f59e0b;
-            --dark-color: #1f2937;
-            --light-color: #f9fafb;
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --accent-color: #FFE66D;
+            --dark-color: #2C3E50;
+            --light-color: #F7F9FC;
             --text-color: #374151;
             --white: #ffffff;
-            --gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            --gradient: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 50%, #95E1D3 100%);
+            --gradient-warm: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+            --gradient-cool: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+            --gradient-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         body {
@@ -40,7 +43,7 @@
             top: 0;
             width: 100%;
             background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             z-index: 1000;
             transition: all 0.3s ease;
         }
@@ -76,12 +79,29 @@
         .nav-links a {
             text-decoration: none;
             color: var(--dark-color);
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s;
+            position: relative;
         }
 
         .nav-links a:hover {
-            color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient);
+            transition: width 0.3s;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .nav-toggle {
@@ -96,6 +116,7 @@
             background: var(--dark-color);
             margin: 3px 0;
             transition: 0.3s;
+            border-radius: 3px;
         }
 
         /* Hero Section */
@@ -131,6 +152,7 @@
             font-size: 3rem;
             margin-bottom: 1rem;
             font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .hero p {
@@ -147,34 +169,37 @@
         }
 
         .btn {
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
             display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
         .btn-primary {
-            background: var(--accent-color);
+            background: var(--gradient-warm);
             color: var(--white);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
         }
 
         .btn-primary:hover {
-            background: #d97706;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
         }
 
         .btn-secondary {
-            background: transparent;
-            color: var(--white);
+            background: var(--white);
+            color: var(--primary-color);
             border: 2px solid var(--white);
         }
 
         .btn-secondary:hover {
-            background: var(--white);
-            color: var(--primary-color);
+            background: transparent;
+            color: var(--white);
         }
 
         /* Section Styles */
@@ -191,7 +216,11 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--dark-color);
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
         }
 
         .section-subtitle {
@@ -219,7 +248,7 @@
         .about-content h3 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: var(--primary-color);
+            color: var(--dark-color);
         }
 
         .about-content p {
@@ -236,17 +265,25 @@
 
         .stat-item {
             text-align: center;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
-            color: var(--secondary-color);
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .stat-label {
             color: var(--text-color);
             font-weight: 500;
+            margin-top: 0.5rem;
         }
 
         /* Services Section */
@@ -258,21 +295,26 @@
 
         .service-card {
             background: var(--white);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: all 0.3s;
             text-align: center;
+            border-top: 4px solid transparent;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-top-color: var(--primary-color);
         }
 
         .service-icon {
             font-size: 3rem;
-            color: var(--secondary-color);
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1rem;
         }
 
@@ -288,7 +330,7 @@
 
         /* Destinations Section */
         .destinations {
-            background: var(--light-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
 
         .destinations-grid {
@@ -299,21 +341,22 @@
 
         .destination-card {
             background: var(--white);
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s;
         }
 
         .destination-card:hover {
-            transform: scale(1.05);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
 
-        .destination-flag {
-            font-size: 4rem;
-            text-align: center;
-            padding: 2rem;
-            background: var(--gradient);
+        .destination-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
         }
 
         .destination-info {
@@ -322,13 +365,31 @@
         }
 
         .destination-info h3 {
-            color: var(--primary-color);
+            color: var(--dark-color);
             margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .destination-info p {
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        .country-code {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.9);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--primary-color);
         }
 
         /* Language Academy Section */
         .academy {
-            background: var(--gradient);
+            background: var(--gradient-purple);
             color: var(--white);
         }
 
@@ -362,6 +423,13 @@
             padding: 0.5rem 1.5rem;
             border-radius: 25px;
             font-weight: 500;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        .language-tag:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
         }
 
         /* Testimonials */
@@ -374,14 +442,27 @@
         .testimonial-card {
             background: var(--white);
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: -10px;
+            left: 20px;
         }
 
         .testimonial-text {
             font-style: italic;
             margin-bottom: 1rem;
             color: var(--text-color);
+            position: relative;
+            z-index: 1;
         }
 
         .testimonial-author {
@@ -410,6 +491,16 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
 
         .contact-icon {
@@ -428,6 +519,10 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .form-group input,
@@ -437,13 +532,14 @@
             border: 2px solid #e5e7eb;
             border-radius: 10px;
             font-family: 'Poppins', sans-serif;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
         }
 
         .form-group textarea {
@@ -487,7 +583,7 @@
         }
 
         .footer-section a:hover {
-            color: var(--accent-color);
+            color: var(--primary-color);
         }
 
         .social-links {
@@ -508,7 +604,7 @@
         }
 
         .social-links a:hover {
-            background: var(--accent-color);
+            background: var(--gradient);
             transform: translateY(-3px);
         }
 
@@ -712,64 +808,72 @@
             <p class="section-subtitle">Explore world-class education opportunities across the globe</p>
             
             <div class="destinations-grid">
-                <div class="destination-card">
-                    <div class="destination-flag">🇮🇹</div>
+                <div class="destination-card" style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=400&h=300&fit=crop" alt="Italy" class="destination-image">
+                    <span class="country-code">IT</span>
                     <div class="destination-info">
                         <h3>Italy</h3>
                         <p>Fully funded scholarships for Bachelor's, Master's, and PhD programs</p>
                     </div>
                 </div>
                 
-                <div class="destination-card">
-                    <div class="destination-flag">🇨🇦</div>
+                <div class="destination-card" style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1517931524326-bdd7af3a31a7?w=400&h=300&fit=crop" alt="Canada" class="destination-image">
+                    <span class="country-code">CA</span>
                     <div class="destination-info">
                         <h3>Canada</h3>
                         <p>Study permits, work visas, and skilled worker programs</p>
                     </div>
                 </div>
                 
-                <div class="destination-card">
-                    <div class="destination-flag">🇬🇧</div>
+                <div class="destination-card" style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop" alt="United Kingdom" class="destination-image">
+                    <span class="country-code">GB</span>
                     <div class="destination-info">
                         <h3>United Kingdom</h3>
                         <p>World-renowned universities and research opportunities</p>
                     </div>
                 </div>
                 
-                <div class="destination-card">
-                    <div class="destination-flag">🇩🇪</div>
+                <div class="destination-card" style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=400&h=300&fit=crop" alt="Germany" class="destination-image">
+                    <span class="country-code">DE</span>
                     <div class="destination-info">
                         <h3>Germany</h3>
                         <p>Tuition-free education and strong industry connections</p>
                     </div>
                 </div>
                 
-                <div class="destination-card">
-                    <div class="destination-flag">🇫🇮</div>
+                <div class="destination-card" style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1555993539-1730b5e3c4e1?w=400&h=300&fit=crop" alt="Finland" class="destination-image">
+                    <span class="country-code">FI</span>
                     <div class="destination-info">
                         <h3>Finland</h3>
                         <p>Innovative education system and scholarship programs</p>
                     </div>
                 </div>
                 
-                <div class="destination-card">
-                    <div class="destination-flag">🇵🇹</div>
+                <div class="destination-card" style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1555881400-74d7adaacd81?w=400&h=300&fit=crop" alt="Portugal" class="destination-image">
+                    <span class="country-code">PT</span>
                     <div class="destination-info">
                         <h3>Portugal</h3>
                         <p>Affordable education with full scholarship opportunities</p>
                     </div>
                 </div>
                 
-                <div class="destination-card">
-                    <div class="destination-flag">🇷🇴</div>
+                <div class="destination-card" style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=400&h=300&fit=crop" alt="Romania" class="destination-image">
+                    <span class="country-code">RO</span>
                     <div class="destination-info">
                         <h3>Romania</h3>
                         <p>Erasmus+ programs and summer opportunities</p>
                     </div>
                 </div>
                 
-                <div class="destination-card">
-                    <div class="destination-flag">🇲🇹</div>
+                <div class="destination-card" style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1572452345691-0a2bed4a37d8?w=400&h=300&fit=crop" alt="Malta" class="destination-image">
+                    <span class="country-code">MT</span>
                     <div class="destination-info">
                         <h3>Malta</h3>
                         <p>English-taught programs in the heart of Europe</p>
@@ -833,73 +937,92 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Ready to start your educational journey? Contact us today for a free consultation</p>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>giovanni4et@gmail.com</p>
-                        </div>
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Ready to start your educational journey? Contact us today for a free consultation</p>
+        
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-instagram"></i>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-telegram"></i>
-                        </div>
-                        <div>
-                            <h4>Telegram</h4>
-                            <p>@Giovanni4ET</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <div>
-                            <h4>Instagram</h4>
-                            <p>@giovanni4et</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-tiktok"></i>
-                        </div>
-                        <div>
-                            <h4>TikTok</h4>
-                            <p>@giovanni4et_</p>
-                        </div>
+                    <div>
+                        <h4>Instagram</h4>
+                        <a href="https://www.instagram.com/giovanni4et" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">@giovanni4et</a>
                     </div>
                 </div>
                 
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-telegram"></i>
                     </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                    <div>
+                        <h4>Telegram</h4>
+                        <a href="https://t.me/Giovanni4ET" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">@Giovanni4ET</a>
                     </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject">
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-tiktok"></i>
                     </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" required></textarea>
+                    <div>
+                        <h4>TikTok</h4>
+                        <a href="https://www.tiktok.com/@giovanni4et_" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">@giovanni4et_</a>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4>Email</h4>
+                        <a href="mailto:giovanni4et@gmail.com" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">giovanni4et@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h4>Office Location</h4>
+                        <a href="https://maps.app.goo.gl/SULh9qKbtpdNn2GK6" target="_blank" style="color: var(--primary-color); text-decoration: none; font-weight: 500; display: block; margin-top: 0.3rem;">
+                            <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>
+                            View on Google Maps
+                        </a>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-color);">Addis Ababa, Ethiopia</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-visual">
+                <div style="background: var(--gradient); border-radius: 20px; padding: 3rem; text-align: center; color: white; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <i class="fas fa-paper-plane" style="font-size: 5rem; margin-bottom: 1.5rem; opacity: 0.9;"></i>
+                    <h3 style="font-size: 2rem; margin-bottom: 1rem;">Let's Connect!</h3>
+                    <p style="font-size: 1.1rem; opacity: 0.9; line-height: 1.8;">
+                        Reach out to us through any of these platforms.<br>
+                        We're here to help you achieve your educational dreams!
+                    </p>
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                        <a href="https://www.instagram.com/giovanni4et" target="_blank" style="width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.5rem; transition: all 0.3s;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://t.me/Giovanni4ET" target="_blank" style="width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.5rem; transition: all 0.3s;">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@giovanni4et_" target="_blank" style="width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.5rem; transition: all 0.3s;">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
     <!-- Footer -->
     <footer>
         <div class="footer-content">

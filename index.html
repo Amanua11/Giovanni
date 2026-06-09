@@ -58,7 +58,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1.5rem 2rem;
         }
 
         .logo {
@@ -75,7 +75,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-links a {
@@ -107,19 +107,22 @@
             margin-top: 80px;
             background: var(--gradient);
             color: var(--white);
-            padding: 6rem 2rem;
+            padding: 8rem 2rem;
             text-align: center;
         }
 
         .hero h1 {
             font-size: 3rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             font-weight: 800;
         }
 
         .hero p {
             font-size: 1.3rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn {
@@ -147,7 +150,7 @@
 
         /* Sections */
         section {
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
         }
 
         .container {
@@ -170,10 +173,13 @@
             text-align: center;
             font-size: 1.1rem;
             color: var(--text-color);
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Destinations Grid - FIXED */
+        /* Destinations Grid */
         .destinations {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
@@ -181,7 +187,7 @@
         .destinations-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 2rem;
         }
 
@@ -192,7 +198,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s;
             position: relative;
-            min-height: 350px;
+            min-height: 400px;
             display: flex;
             flex-direction: column;
         }
@@ -204,7 +210,7 @@
 
         .destination-image-container {
             width: 100%;
-            height: 200px;
+            height: 220px;
             overflow: hidden;
             position: relative;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -223,10 +229,10 @@
 
         .country-code {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 15px;
+            right: 15px;
             background: rgba(255,255,255,0.95);
-            padding: 0.3rem 0.8rem;
+            padding: 0.4rem 1rem;
             border-radius: 20px;
             font-weight: 700;
             font-size: 0.85rem;
@@ -235,7 +241,7 @@
         }
 
         .destination-info {
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
             text-align: center;
             flex: 1;
             display: flex;
@@ -245,21 +251,21 @@
 
         .destination-info h3 {
             color: var(--dark-color);
-            margin-bottom: 0.5rem;
-            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
         }
 
         .destination-info p {
             color: var(--text-color);
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* Telegram Section */
         .telegram-info {
             background: linear-gradient(135deg, #0088cc 0%, #0099e6 100%);
             color: var(--white);
-            padding: 4rem 2rem;
+            padding: 6rem 2rem;
         }
 
         .telegram-container {
@@ -273,44 +279,70 @@
             margin-bottom: 1rem;
         }
 
+        .telegram-header p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
         .telegram-channel-box {
             background: rgba(255,255,255,0.15);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 2rem;
-            margin: 2rem auto;
+            padding: 3rem 2rem;
+            margin: 3rem auto;
             max-width: 600px;
             border: 2px solid rgba(255,255,255,0.2);
         }
 
         .telegram-channel-box i {
             font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .telegram-channel-box h3 {
+            font-size: 1.8rem;
             margin-bottom: 1rem;
+        }
+
+        .telegram-channel-box p {
+            margin: 1rem 0;
+            font-size: 1.1rem;
         }
 
         .telegram-channel-box a {
             color: var(--accent-color);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
 
         .country-updates {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
         .update-card {
             background: rgba(255,255,255,0.1);
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
             border-radius: 15px;
             text-align: center;
+            transition: all 0.3s;
+        }
+
+        .update-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
         }
 
         .update-card .flag {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .update-card h4 {
+            font-size: 1.2rem;
             margin-bottom: 0.5rem;
         }
 
@@ -322,36 +354,48 @@
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
+            gap: 4rem;
+            margin-top: 3rem;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
             background: var(--white);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
 
         .contact-icon {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             background: var(--gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            margin-bottom: 0.25rem;
+            color: var(--dark-color);
         }
 
         .contact-item a {
@@ -364,7 +408,7 @@
         footer {
             background: var(--dark-color);
             color: var(--white);
-            padding: 3rem 2rem 1rem;
+            padding: 4rem 2rem 2rem;
         }
 
         .footer-content {
@@ -372,13 +416,14 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
         .footer-section h3 {
             color: var(--accent-color);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
         }
 
         .footer-section ul {
@@ -386,12 +431,13 @@
         }
 
         .footer-section ul li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
         .footer-section a {
             color: rgba(255,255,255,0.8);
             text-decoration: none;
+            transition: color 0.3s;
         }
 
         .footer-section a:hover {
@@ -436,12 +482,22 @@
                 font-size: 2rem;
             }
 
+            .hero {
+                padding: 6rem 1.5rem;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
             .destinations-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .contact-grid {
                 grid-template-columns: 1fr;
+                gap: 3rem;
             }
 
             .btn {
@@ -475,7 +531,7 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Your Gateway to Global Education</h1>
-            <p>Empowering Ethiopian and Habesha students to achieve their dreams of studying abroad</p>
+            <p>Empowering Ethiopian and Habesha students to achieve their dreams of studying abroad with fully funded scholarships and expert guidance</p>
             <div>
                 <a href="#destinations" class="btn btn-primary">Explore Destinations</a>
                 <a href="#contact" class="btn btn-secondary">Contact Us</a>
@@ -505,11 +561,11 @@
                     </div>
                 </div>
                 
-                <!-- Canada -->
+                <!-- Canada - BREATHTAKING IMAGE UPDATED -->
                 <div class="destination-card">
                     <div class="destination-image-container">
-                        <img src="https://images.unsplash.com/photo-1517931524326-bdd7af3a31a7?w=400&h=300&fit=crop" 
-                             alt="Canada" 
+                        <img src="https://images.unsplash.com/photo-1531263539446-3200496dfe86?w=400&h=300&fit=crop" 
+                             alt="Canada - Banff National Park" 
                              class="destination-image"
                              onerror="this.onerror=null; this.src='https://picsum.photos/seed/canada/400/300';">
                         <span class="country-code">CA</span>
@@ -624,13 +680,13 @@
             <div class="telegram-channel-box">
                 <i class="fab fa-telegram-plane"></i>
                 <h3>Follow Us on Telegram</h3>
-                <p style="margin: 1rem 0;">Stay updated with the latest scholarship opportunities</p>
+                <p>Stay updated with the latest scholarship opportunities, application deadlines, and expert guidance</p>
                 <a href="https://t.me/Giovanni4ET" target="_blank">@Giovanni4ET</a>
             </div>
             
             <div class="country-updates">
                 <div class="update-card">
-                    <div class="flag">🇮</div>
+                    <div class="flag">🇮🇹</div>
                     <h4>Italy</h4>
                     <p>Fully Funded Scholarships</p>
                 </div>
@@ -640,7 +696,7 @@
                     <p>Tuition-Free Education</p>
                 </div>
                 <div class="update-card">
-                    <div class="flag">🇬🇧</div>
+                    <div class="flag">🇬</div>
                     <h4>UK</h4>
                     <p>Skilled Work Visas</p>
                 </div>
@@ -712,10 +768,10 @@
                     </div>
                 </div>
                 
-                <div style="background: var(--gradient); border-radius: 20px; padding: 3rem; text-align: center; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <i class="fas fa-paper-plane" style="font-size: 5rem; margin-bottom: 1.5rem;"></i>
-                    <h3 style="font-size: 2rem; margin-bottom: 1rem;">Let's Connect!</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8;">
+                <div style="background: var(--gradient); border-radius: 20px; padding: 4rem 3rem; text-align: center; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <i class="fas fa-paper-plane" style="font-size: 5rem; margin-bottom: 2rem;"></i>
+                    <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Let's Connect!</h3>
+                    <p style="font-size: 1.2rem; line-height: 1.8;">
                         Reach out to us through any of these platforms.<br>
                         We're here to help you achieve your educational dreams!
                     </p>
@@ -729,7 +785,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Giovanni4et</h3>
-                <p>Empowering students to achieve their educational dreams abroad.</p>
+                <p>Empowering students to achieve their educational dreams abroad through expert guidance and comprehensive support.</p>
             </div>
             
             <div class="footer-section">
@@ -737,6 +793,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#telegram">Telegram Updates</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -746,6 +803,7 @@
                 <ul>
                     <li><i class="fas fa-phone"></i> +251 904 151 501</li>
                     <li><i class="fas fa-envelope"></i> giovanni4et@gmail.com</li>
+                    <li><i class="fab fa-telegram"></i> @Giovanni4ET</li>
                 </ul>
             </div>
         </div>
